@@ -6,5 +6,9 @@ vim.keymap.set("n", "<leader>lf", function()
 	vim.lsp.buf.format({ async = true }) -- async formatting
 end, { desc = "Format current buffer" })
 
+vim.keymap.set("n", "gd", function()
+	vim.lsp.buf.definition()
+end, { desc = "Go to definition" })
+
 -- If diagnostics floating window is too large, you can go inside with <C-w> w after opening it
 vim.keymap.set("n", "<leader>ld", vim.diagnostic.open_float, { desc = "Show diagnostic" })
