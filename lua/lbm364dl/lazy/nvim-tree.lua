@@ -15,7 +15,7 @@ return {
 				api.config.mappings.default_on_attach(bufnr)
 
 				-- custom mappings (buffer-local!)
-				vim.keymap.set("n", "l", api.node.open.edit, { desc = "nvim-tree: Open file" })
+				vim.keymap.set("n", "l", api.node.open.edit, { desc = "nvim-tree: Open file", buffer = bufnr })
 			end
 		})
 	end,
