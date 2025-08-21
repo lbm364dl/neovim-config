@@ -17,3 +17,10 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.tabstop = 2
 	end,
 })
+
+vim.diagnostic.config({
+	virtual_text = true,     -- show inline messages
+	signs = true,            -- show gutter signs
+	underline = true,        -- underline problematic code
+	update_in_insert = false, -- don’t update while typing
+})
