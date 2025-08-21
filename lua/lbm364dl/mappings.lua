@@ -1,7 +1,7 @@
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save file" })
 vim.keymap.set("i", "hj", "<Esc>", { desc = "Leave insert mode" })
-vim.keymap.set("n", "<leader>c", ":bdelete<CR>", { desc = "Close current buffer "})
+vim.keymap.set("n", "<leader>c", ":bdelete<CR>", { desc = "Close current buffer " })
 
 vim.keymap.set("n", "<leader>f", function()
-  vim.lsp.buf.format({ async = true }) -- async formatting
+	vim.lsp.buf.format({ async = true }) -- async formatting
 end, { desc = "Format current buffer" })
