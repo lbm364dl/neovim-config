@@ -8,6 +8,10 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup({
+			git = {
+				enable = true,
+				ignore = false, -- do not hide files from .gitignore
+			},
 			on_attach = function(bufnr)
 				local api = require("nvim-tree.api")
 
