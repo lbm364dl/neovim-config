@@ -1,6 +1,7 @@
 vim.opt.clipboard = "unnamedplus"
 vim.cmd.colorscheme("tokyonight")
 vim.opt.relativenumber = true
+vim.opt.expandtab = true
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "python" },
