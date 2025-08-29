@@ -3,6 +3,10 @@ vim.cmd.colorscheme("tokyonight")
 vim.opt.relativenumber = true
 vim.opt.expandtab = true
 vim.opt.undofile = true
+-- Case insensitive searching
+vim.opt.ignorecase = true
+-- BUT: if you type a capital letter, make it case-sensitive
+vim.opt.smartcase = true
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "python" },
