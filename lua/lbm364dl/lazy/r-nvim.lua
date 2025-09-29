@@ -10,7 +10,7 @@ local function run_current_testthat()
   local file_dir = vim.fn.fnamemodify(cur_file, ":h")
 
   -- jump backwards to nearest "test_that("
-  local start_line = vim.fn.search([[^\s*test_that\s*(]], "bnW")
+  local start_line = vim.fn.search([[\s*test_that\s*(]], "bnW")
   if start_line == 0 then
     vim.notify("No enclosing test_that() found", vim.log.levels.WARN)
     return
