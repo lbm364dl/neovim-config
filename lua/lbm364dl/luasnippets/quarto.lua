@@ -98,6 +98,12 @@ return {
     }
   ),
   s(
+    { trig = ";r", snippetType = "autosnippet" },
+    {
+      t("\\rho")
+    }
+  ),
+  s(
     { trig = ";s", snippetType = "autosnippet" },
     {
       t("\\sigma")
@@ -113,6 +119,52 @@ return {
     { trig = ";p", snippetType = "autosnippet" },
     {
       t("\\pi")
+    }
+  ),
+  s(
+    { trig = ";v", snippetType = "autosnippet" },
+    fmta([[\vec{<>}]], { i(1), })
+  ),
+  s(
+    { trig = ",s", snippetType = "autosnippet" },
+    {
+      t("\\subset")
+    }
+  ),
+  s(
+    { trig = ",x", snippetType = "autosnippet" },
+    {
+      t("\\times")
+    }
+  ),
+  s(
+    { trig = ",c", snippetType = "autosnippet" },
+    {
+      t("\\cong")
+    }
+  ),
+  s(
+    { trig = ",r", snippetType = "autosnippet" },
+    {
+      t("\\rightarrow")
+    }
+  ),
+  s(
+    { trig = ",o", snippetType = "autosnippet" },
+    {
+      t("\\circ")
+    }
+  ),
+  s(
+    { trig = ",i", snippetType = "autosnippet" },
+    {
+      t("\\cap")
+    }
+  ),
+  s(
+    { trig = ",m", snippetType = "autosnippet" },
+    {
+      t("\\mid")
     }
   ),
   s(
@@ -158,6 +210,9 @@ return {
   ),
   s({ trig = "((", snippetType = "autosnippet" },
     fmta([[(<>)]], { i(1) })
+  ),
+  s({ trig = "{}", snippetType = "autosnippet" },
+    fmta([[\left\{  <>\right\}]], { i(1) })
   ),
   s({ trig = "dmm", snippetType = "autosnippet" },
     fmta(
