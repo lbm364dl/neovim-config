@@ -22,6 +22,36 @@ end
 
 return {
   s(
+    { trig = "callout", snippetType = "autosnippet" },
+    fmta(
+      [[
+    ::: {.callout-<>}
+    ## <>
+    <>
+    :::
+    ]],
+      {
+        i(1), -- callout type
+        i(2), -- callout title
+        i(3), -- callout body
+      }
+    )
+  ),
+  s(
+    { trig = "cb", snippetType = "autosnippet" },
+    fmta(
+      [[
+    ```{<>}
+    <>
+    ```
+    ]],
+      {
+        i(1), -- language
+        i(2), -- code
+      }
+    )
+  ),
+  s(
     { trig = "tt", snippetType = "autosnippet" },
     fmta("\\texttt{<>}", { i(1) })
   ),
