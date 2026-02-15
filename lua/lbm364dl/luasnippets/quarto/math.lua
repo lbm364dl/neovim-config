@@ -1,4 +1,4 @@
-function matrix_nodes(args, snip)
+local function matrix_nodes(args, snip)
   local rows = tonumber(snip.captures[1]) or 2
   local cols = tonumber(snip.captures[2]) or 2
   local nodes = {}
@@ -22,104 +22,8 @@ end
 
 return {
   s(
-    { trig = "callout", snippetType = "autosnippet" },
-    fmta(
-      [[
-    ::: {.callout-<>}
-    ## <>
-    <>
-    :::
-    ]],
-      {
-        i(1), -- callout type
-        i(2), -- callout title
-        i(3), -- callout body
-      }
-    )
-  ),
-  s(
-    { trig = "cb", snippetType = "autosnippet" },
-    fmta(
-      [[
-    ```{<>}
-    <>
-    ```
-    ]],
-      {
-        i(1), -- language
-        i(2), -- code
-      }
-    )
-  ),
-  s(
-    { trig = "tt", snippetType = "autosnippet" },
-    fmta("\\texttt{<>}", { i(1) })
-  ),
-  s(
     { trig = "ff", snippetType = "autosnippet" },
     fmta("\\frac{<>}{<>}", { i(1), i(2) })
-  ),
-
-  -- Greek letters
-  s(
-    { trig = ";a", snippetType = "autosnippet" },
-    {
-      t("\\alpha")
-    }
-  ),
-  s(
-    { trig = ";b", snippetType = "autosnippet" },
-    {
-      t("\\beta")
-    }
-  ),
-  s(
-    { trig = ";g", snippetType = "autosnippet" },
-    {
-      t("\\gamma")
-    }
-  ),
-  s(
-    { trig = ";t", snippetType = "autosnippet" },
-    {
-      t("\\tau")
-    }
-  ),
-  s(
-    { trig = ";f", snippetType = "autosnippet" },
-    {
-      t("\\phi")
-    }
-  ),
-  s(
-    { trig = ";e", snippetType = "autosnippet" },
-    {
-      t("\\epsilon")
-    }
-  ),
-  s(
-    { trig = ";r", snippetType = "autosnippet" },
-    {
-      t("\\rho")
-    }
-  ),
-  s(
-    { trig = ";s", snippetType = "autosnippet" },
-    {
-      t("\\sigma")
-    }
-  ),
-  s(
-    { trig = ";o", snippetType = "autosnippet" },
-    {
-      t("\\omega")
-    }
-  ),
-  s(
-    { trig = ";p", snippetType = "autosnippet" },
-    {
-      t("\\pi")
-    }
   ),
   s(
     { trig = ";v", snippetType = "autosnippet" },
@@ -185,20 +89,6 @@ return {
     { trig = "tsin", snippetType = "autosnippet" },
     fmta([[\sin{<>}]], { i(1), })
   ),
-  s({ trig = "env", snippetType = "autosnippet" },
-    fmta(
-      [[
-      \begin{<>}
-          <>
-      \end{<>}
-    ]],
-      {
-        i(1),
-        i(2),
-        rep(1), -- this node repeats insert node i(1)
-      }
-    )
-  ),
   s({ trig = "__", snippetType = "autosnippet", wordTrig = false },
     fmta([[_{<>}]], { i(1), })
   ),
@@ -213,18 +103,6 @@ return {
   ),
   s({ trig = "nsq", snippetType = "autosnippet" },
     fmta([[\sqrt[<>]{<>}]], { i(1), i(2) })
-  ),
-  s({ trig = "((", snippetType = "autosnippet" },
-    fmta([[(<>)]], { i(1) })
-  ),
-  s({ trig = "[a", snippetType = "autosnippet" },
-    fmta([[| <> |]], { i(1) })
-  ),
-  s({ trig = "[n", snippetType = "autosnippet" },
-    fmta([[\| <> \|]], { i(1) })
-  ),
-  s({ trig = "{}", snippetType = "autosnippet" },
-    fmta([[\left\{  <>\right\}]], { i(1) })
   ),
   s({ trig = "dmm", snippetType = "autosnippet" },
     fmta(
@@ -250,14 +128,4 @@ return {
       }
     )
   ),
-  s({ trig = "hr", dscr = "The hyperref package's href{}{} command (for url links)" },
-    fmta(
-      [[\href{<>}{<>}]],
-      {
-        i(1, "url"),
-        i(2, "display name"),
-      }
-    )
-  ),
-
 }

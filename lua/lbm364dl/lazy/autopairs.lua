@@ -5,6 +5,7 @@ return {
 		require("nvim-autopairs").setup {
 			check_ts = true, -- use treesitter for smarter pairing
 			fast_wrap = {},  -- optional fast wrap
+			disable_filetype = { "TelescopePrompt", "spectre_panel", "quarto" },
 		}
 
 		-- integrate with nvim-cmp
