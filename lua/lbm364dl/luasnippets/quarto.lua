@@ -168,6 +168,12 @@ return {
     }
   ),
   s(
+    { trig = ",.", snippetType = "autosnippet" },
+    {
+      t("\\dots")
+    }
+  ),
+  s(
     { trig = "mbb", snippetType = "autosnippet" },
     fmta([[\mathbb{<>}]], { i(1), })
   ),
