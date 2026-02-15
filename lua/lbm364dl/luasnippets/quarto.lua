@@ -217,6 +217,12 @@ return {
   s({ trig = "((", snippetType = "autosnippet" },
     fmta([[(<>)]], { i(1) })
   ),
+  s({ trig = "[a", snippetType = "autosnippet" },
+    fmta([[| <> |]], { i(1) })
+  ),
+  s({ trig = "[n", snippetType = "autosnippet" },
+    fmta([[\| <> \|]], { i(1) })
+  ),
   s({ trig = "{}", snippetType = "autosnippet" },
     fmta([[\left\{  <>\right\}]], { i(1) })
   ),
