@@ -82,6 +82,10 @@ return {
     fmta([[\mathbb{<>}]], { i(1), })
   ),
   s(
+    { trig = "mff", snippetType = "autosnippet" },
+    fmta([[\mathfrak{<>}]], { i(1), })
+  ),
+  s(
     { trig = "tcos", snippetType = "autosnippet" },
     fmta([[\cos{<>}]], { i(1), })
   ),
