@@ -17,12 +17,27 @@ vim.keymap.set("n", "<leader>c", function()
   end
 end, { desc = "Close current buffer" })
 
+-- Open nvim-tree and focus on the current file
+vim.keymap.set("n", "<leader>e", function()
+  -- Open nvim-tree and focus on the current file
+  require("nvim-tree.api").tree.toggle({ focus = true, find_file = true })
+end, { desc = "Toggle file explorer" })
+
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bb", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<leader>bl", "<cmd>ls<CR>:b<space>", { desc = "List buffers" })
+
+vim.keymap.set("n", "<leader>vc", "<cmd>vsplit $MYVIMRC<CR>", { desc = "Edit config" })
+vim.keymap.set("n", "<leader>vm", "<cmd>vsplit ~/.config/nvim/lua/lbm364dl/mappings.lua<CR>", { desc = "Edit mappings" })
+
 vim.keymap.set("n", "<leader>lf", function()
-  if vim.bo.filetype == "quarto" then
-    require("conform").format()
-  else
-    vim.lsp.buf.format({ async = true }) -- async formatting
-  end
+
+if vim.bo.filetype == "quarto" then
+  require("conform").format()
+else
+  vim.lsp.buf.format({ async = true }) -- async formatting
+end
+
 end, { desc = "Format current buffer" })
 
 vim.keymap.set("n", "gd", function()

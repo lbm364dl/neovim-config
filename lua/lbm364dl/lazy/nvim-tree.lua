@@ -8,6 +8,12 @@ return {
 	},
 	config = function()
 		require("nvim-tree").setup({
+      update_focused_file = {
+        enable = true,
+        update_cwd = true,
+      },
+      respect_buf_cwd = true,
+      sync_root_with_cwd = true,
 			git = {
 				enable = true,
 				ignore = false, -- do not hide files from .gitignore
