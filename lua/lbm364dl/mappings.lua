@@ -31,13 +31,11 @@ vim.keymap.set("n", "<leader>vc", "<cmd>vsplit $MYVIMRC<CR>", { desc = "Edit con
 vim.keymap.set("n", "<leader>vm", "<cmd>vsplit ~/.config/nvim/lua/lbm364dl/mappings.lua<CR>", { desc = "Edit mappings" })
 
 vim.keymap.set("n", "<leader>lf", function()
-
-if vim.bo.filetype == "quarto" then
-  require("conform").format()
-else
-  vim.lsp.buf.format({ async = true }) -- async formatting
-end
-
+  if vim.bo.filetype == "quarto" then
+    require("conform").format()
+  else
+    vim.lsp.buf.format({ async = true }) -- async formatting
+  end
 end, { desc = "Format current buffer" })
 
 vim.keymap.set("n", "gd", function()
