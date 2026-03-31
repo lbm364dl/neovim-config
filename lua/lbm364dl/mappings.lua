@@ -27,8 +27,9 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bnext<CR>", { desc = "Next buffer" })
 vim.keymap.set("n", "<leader>bb", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
 vim.keymap.set("n", "<leader>bl", "<cmd>ls<CR>:b<space>", { desc = "List buffers" })
 
-vim.keymap.set("n", "<leader>vc", "<cmd>vsplit $MYVIMRC<CR>", { desc = "Edit config" })
-vim.keymap.set("n", "<leader>vm", "<cmd>vsplit ~/.config/nvim/lua/lbm364dl/mappings.lua<CR>", { desc = "Edit mappings" })
+local config = vim.fn.stdpath("config")
+vim.keymap.set("n", "<leader>vc", "<cmd>vsplit " .. config .. "/init.lua<CR>", { desc = "Edit config" })
+vim.keymap.set("n", "<leader>vm", "<cmd>vsplit " .. config .. "/lua/lbm364dl/mappings.lua<CR>", { desc = "Edit mappings" })
 
 vim.keymap.set("n", "<leader>lf", function()
   if vim.bo.filetype == "quarto" then
