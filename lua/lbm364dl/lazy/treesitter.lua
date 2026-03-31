@@ -7,7 +7,7 @@ return {
 		configs.setup({
 			ensure_installed = {
 				"r", "markdown", "rnoweb", "yaml",
-				"lua", "vim", "vimdoc", "python"
+				"lua", "vim", "vimdoc", "python", "elixir"
 			},
 			sync_install = false,
 			highlight = { enable = true },

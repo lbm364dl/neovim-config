@@ -4,7 +4,23 @@ return {
     "nvim-lua/plenary.nvim",
     "github/copilot.vim"
   },
-  opts = {},
+  opts = {
+    adapters = {
+      acp = {
+        claude_code = function()
+          return require("codecompanion.adapters").extend("claude_code", {
+            env = {
+              CLAUDE_CODE_OAUTH_TOKEN = vim.env.CLAUDE_CODE_OAUTH_TOKEN,
+            },
+          })
+        end,
+      },
+    },
+    strategies = {
+      chat = { adapter = "claude_code" },
+      inline = { adapter = "claude_code" },
+    },
+  },
   -- opts = {
   --   strategies = {
   --     chat = {
